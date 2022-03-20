@@ -58,5 +58,8 @@ jobs:
       run: poetry install
       if: steps.cache.outputs.cache-hit != 'true'
 
+    - name: Check for security issues
+      run: poe bandit
+
     - name: Run test suite
       run: poe test
