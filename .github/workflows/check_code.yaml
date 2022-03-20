@@ -1,0 +1,62 @@
+name: Check Code
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8, 3.9]
+        poetry-version: [1.1.13]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+      # Setup Python (faster than using Python container)
+    - name: Setup Python ${{ matrix.python-version }} on ${{ matrix.os }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install wheel
+      run: python -m pip install wheel
+
+    - name: Install poetry ${{ matrix.poetry-version }}
+      uses: abatilo/actions-poetry@v2.0.0
+      with:
+        poetry-version: ${{ matrix.poetry-version }}
+
+    - name: Cache Poetry virtualenv
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: ~/.virtualenvs
+        key: poetry-${{ hashFiles('**/poetry.lock') }}
+        restore-keys: |
+          poetry-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Config Poetry
+      run: |
+        poetry config settings.virtualenvs.in-project false
+        poetry config settings.virtualenvs.path ~/.virtualenvs
+
+    - name: Install Dependencies using Poetry
+      run: poetry install
+      if: steps.cache.outputs.cache-hit != 'true'
+
+    - name: Run test suite
+      run: poe test
