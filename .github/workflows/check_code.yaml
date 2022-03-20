@@ -42,13 +42,13 @@ jobs:
         poetry-version: ${{ matrix.poetry-version }}
 
     - name: Cache Poetry virtualenv
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       id: cache
       with:
         path: ~/.virtualenvs
-        key: poetry-${{ hashFiles('**/poetry.lock') }}
+        key: poetry-${{ hashFiles('**/poetry.lock') }}-py${{ matrix.python-version }}-os${{ matrix.os }}
         restore-keys: |
-          poetry-${{ hashFiles('**/poetry.lock') }}
+          poetry-${{ hashFiles('**/poetry.lock') }}-py${{ matrix.python-version }}-os${{ matrix.os }}
 
     - name: Config Poetry
       run: |
