@@ -1,0 +1,5 @@
+assert_used:
+  skips: ['*tests/**']
+
+try_except_pass:
+  check_typed_exception: True
