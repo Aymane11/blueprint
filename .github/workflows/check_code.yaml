@@ -51,8 +51,8 @@ jobs:
 
     - name: Config Poetry
       run: |
-        poetry config settings.virtualenvs.in-project false
-        poetry config settings.virtualenvs.path ~/.virtualenvs
+        poetry config virtualenvs.in-project false
+        poetry config virtualenvs.path ~/.virtualenvs
 
     - name: Install Dependencies using Poetry
       run: poetry install
