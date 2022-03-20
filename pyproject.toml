@@ -1,7 +1,7 @@
 [tool.poetry]
 name        = "blueprint"
 version     = "0.1.0"
-description = "A blueprint template for Python projects"
+description = "A blueprint template for Python projects."
 authors     = ["Aymane Boumaaza <aymaneboumaaza@gmail.com>"]
 license     = "MIT"
 readme      = "README.md"
