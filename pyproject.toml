@@ -23,29 +23,14 @@ autoflake  = "^1.4"
 
 [tool.poe.tasks]
 
-    [tool.poe.tasks.format]
-    help = "Run black on the code base"
-    cmd  = "black ."
-
-    [tool.poe.tasks.bandit]
-    help = "Run bandit on the code base"
-    cmd = "bandit -c bandit.yaml -r blueprint/ tests/"
-
-    [tool.poe.tasks.pylint]
-    help = "Run pylint on the code base"
-    cmd = "pylint blueprint/ tests/"
-
-    [tool.poe.tasks.flake8]
-    help = "Run flake8 on the code base"
-    cmd = "flake8 blueprint/* tests/*"
-
-    [tool.poe.tasks.test]
-    help = "Run pytest on the code base"
-    cmd = "pytest -v --cov=blueprint --cov-report=term"
-
-    [tool.poe.tasks.pre-commit]
-    help = "Run pre-commit on the code base before commit"
-    cmd = "pre-commit run --files */* *"
+format = {cmd = "black .", help = "Format the code using black" }
+bandit = {cmd = "bandit -c bandit.yaml -r blueprint/ tests/", help = "Check for code security issues using bandit"}
+pylint = {cmd = "pylint blueprint/ tests/", help = "Lint the code using pylint"}
+flake8 = {cmd = "flake8 blueprint/* tests/*", help = "Lint the code using flake8"}
+autoflake = {cmd = "autoflake --in-place --recursive --remove-all-unused-imports --expand-star-imports --ignore-init-module-imports blueprint/* tests/*", help = "Remove unused imports"}
+test = {cmd = "pytest -v --cov=blueprint --cov-report=term", help = "Run unit tests with coverage"}
+pre-commit = {cmd = "pre-commit run --files */* *", help = "Run pre-commit hooks before staging"}
+all = { sequence = ["format", "bandit", "pylint", "flake8", "autoflake", "test", "pre-commit"], ignore_fail = true, help = "Run all checks"}
 
 
 [build-system]
