@@ -11,6 +11,9 @@ A blueprint for creating a new Python project.
 - poetry :pen: _[(installation guide)](https://github.com/python-poetry/poetry#installation)_
 
 ### Getting started
+- Follow this [link](https://github.com/Aymane11/blueprint/generate) to create a repository using this template, without the need to clone it.
+- Or use the [![generate-image](https://user-images.githubusercontent.com/24499930/166961507-e9c09a87-f0c8-4c94-9d2f-d179496407a1.png)](https://github.com/Aymane11/blueprint/generate) button located in the repository homepage.
+
 #### Development
 - Run the following command to install dependencies (including dev dependencies):
 ```python
