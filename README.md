@@ -50,6 +50,30 @@ poetry install --no-dev
 2. Change it :wrench:
 4. Create a Pull Request :arrows_clockwise:
 
+
+## Project structure
+```bash
+.
+├── data            
+│   ├── final                       # data after training the model
+│   ├── processed                   # data after processing
+│   ├── raw                         # raw data
+├── docs                            # documentation for your project
+├── .flake8                         # configuration for flake8 - a Python formatter tool
+├── .gitignore                      # ignore files that cannot commit to Git
+├── Makefile                        # store useful commands to set up the environment
+├── models                          # store models
+├── notebooks                       # store notebooks
+├── .pre-commit-config.yaml         # configurations for pre-commit
+├── pyproject.toml                  # dependencies for poetry
+├── README.md                       # describe your project
+├── src                             # store source code
+│   ├── __init__.py                 # make src a Python module 
+│   ├── blueprint.py                  
+└── tests                           # store tests
+    ├── __init__.py                 # make tests a Python module 
+    ├── test_blueprint.py             
+```
 ## License
 
 Distributed under the **MIT license**. See [`LICENSE.md`](https://github.com/Aymane11/blueprint/blob/main/LICENSE.md) file for more information.

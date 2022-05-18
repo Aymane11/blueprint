@@ -9,6 +9,8 @@ readme      = "README.md"
 [tool.poetry.dependencies]
 python        = "^3.8"
 python-dotenv = "^0.19.2"
+notebook      = "^6.4.10"
+
 
 [tool.poetry.dev-dependencies]
 flake8     = "^4.0.1"
@@ -36,3 +38,20 @@ all = { sequence = ["format", "bandit", "pylint", "flake8", "autoflake", "test",
 [build-system]
 requires      = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+	\.git
+| \.hg
+| \.mypy_cache
+| \.tox
+| \.venv
+| _build
+| buck-out
+| build   
+)/ 
+'''
