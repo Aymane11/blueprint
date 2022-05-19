@@ -54,7 +54,7 @@ poetry install --no-dev
 ## Project structure
 ```bash
 .
-├── data            
+├── data
 │   ├── final                       # data after training the model
 │   ├── processed                   # data after processing
 │   ├── raw                         # raw data
@@ -68,12 +68,18 @@ poetry install --no-dev
 ├── pyproject.toml                  # dependencies for poetry
 ├── README.md                       # describe your project
 ├── src                             # store source code
-│   ├── __init__.py                 # make src a Python module 
-│   ├── blueprint.py                  
+│   ├── __init__.py                 # make src a Python module
+│   ├── blueprint.py
 └── tests                           # store tests
-    ├── __init__.py                 # make tests a Python module 
-    ├── test_blueprint.py             
+    ├── __init__.py                 # make tests a Python module
+    ├── test_blueprint.py
 ```
+
+## TO DO
+DVC
+Hydra
+Docker
+
 ## License
 
 Distributed under the **MIT license**. See [`LICENSE.md`](https://github.com/Aymane11/blueprint/blob/main/LICENSE.md) file for more information.
