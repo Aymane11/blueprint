@@ -1,9 +1,8 @@
 [![Check Code](https://github.com/Aymane11/blueprint/actions/workflows/check_code.yaml/badge.svg)](https://github.com/Aymane11/blueprint/actions/workflows/check_code.yaml)
 [![Issues](https://img.shields.io/github/issues/Aymane11/blueprint)](https://github.com/Aymane11/blueprint/issues)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-# blueprint
 
-A blueprint for creating a new Python project.
+# blueprint
+A code starter for creating Python (Data Science) projects.
 
 ## Usage
 ### Requirements
@@ -19,7 +18,7 @@ A blueprint for creating a new Python project.
 ```python
 poetry install
 ```
-- Run the following command to get available commands (see [`pyproject.toml`](https://github.com/Aymane11/blueprint/blob/main/pyproject.toml#L24) for more information):
+- Run the following command to get available commands (see [`pyproject.toml`](https://github.com/Aymane11/blueprint/blob/main/pyproject.toml#L26) for more information):
 ```python
 poe -h
 ```
@@ -48,7 +47,7 @@ poetry install --no-dev
 ```
 
 ## Project structure
-```bash
+```
 .
 ├── data
 │   ├── final                    # data after training the model
@@ -72,18 +71,17 @@ poetry install --no-dev
 ```
 
 ## TO DO
+- [ ] Docker
 - [ ] DVC
 - [ ] Hydra
-- [ ] Docker
+- [ ] Cookiecutter
 
 ## Contributing
-
 1. Fork it :fork_and_knife:
 2. Change it :wrench:
 4. Create a Pull Request :arrows_clockwise:
 
 ## Contributors
-
 <div align="center">
 	<a href="https://github.com/Aymane11/blueprint/graphs/contributors">
   	<img src="https://contrib.rocks/image?repo=Aymane11/blueprint" />
