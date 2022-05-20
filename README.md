@@ -71,7 +71,7 @@ poetry install --no-dev
 ```
 
 ## TO DO
-- [ ] Docker
+- [x] Docker
 - [ ] DVC
 - [ ] Hydra
 - [ ] Cookiecutter
