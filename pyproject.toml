@@ -6,10 +6,10 @@ authors     = ["Aymane Boumaaza <aymaneboumaaza@gmail.com>"]
 license     = "MIT"
 readme      = "README.md"
 
+
 [tool.poetry.dependencies]
 python        = "^3.8"
 python-dotenv = "^0.19.2"
-notebook      = "^6.4.10"
 
 
 [tool.poetry.dev-dependencies]
@@ -22,9 +22,10 @@ poethepoet = "^0.13.1"
 pylint     = "^2.12.2"
 bandit     = "^1.7.4"
 autoflake  = "^1.4"
+notebook   = "^6.4.11"
+
 
 [tool.poe.tasks]
-
 format = {cmd = "black .", help = "Format the code using black" }
 bandit = {cmd = "bandit -c bandit.yaml -r src/ tests/", help = "Check for code security issues using bandit"}
 pylint = {cmd = "pylint src/ tests/", help = "Lint the code using pylint"}
