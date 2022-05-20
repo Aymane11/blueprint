@@ -1,4 +1,4 @@
-from blueprint.main import say_hello
+from src.main import say_hello
 
 
 def test_say_hello():

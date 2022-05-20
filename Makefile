@@ -1,7 +1,7 @@
 .PHONY: notebook docs
 .EXPORT_ALL_VARIABLES:
 
-install: 
+install:
 	@echo "Installing..."
 	poetry install
 	poetry run pre-commit install
@@ -14,13 +14,12 @@ activate:
 	@echo "Activating virtual environment"
 	poetry shell
 
-#initialize_git:
-#	git init 
+initialize_git:
+	git init
 
 
-setup: install
-#	initialize_git
-	
+setup: initialize_git install
+
 
 test:
 	pytest
