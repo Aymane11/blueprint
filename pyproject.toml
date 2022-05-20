@@ -9,6 +9,8 @@ readme      = "README.md"
 [tool.poetry.dependencies]
 python        = "^3.8"
 python-dotenv = "^0.19.2"
+notebook      = "^6.4.10"
+
 
 [tool.poetry.dev-dependencies]
 flake8     = "^4.0.1"
@@ -24,11 +26,11 @@ autoflake  = "^1.4"
 [tool.poe.tasks]
 
 format = {cmd = "black .", help = "Format the code using black" }
-bandit = {cmd = "bandit -c bandit.yaml -r blueprint/ tests/", help = "Check for code security issues using bandit"}
-pylint = {cmd = "pylint blueprint/ tests/", help = "Lint the code using pylint"}
-flake8 = {cmd = "flake8 blueprint/* tests/*", help = "Lint the code using flake8"}
-autoflake = {cmd = "autoflake --in-place --recursive --remove-all-unused-imports --expand-star-imports --ignore-init-module-imports blueprint/* tests/*", help = "Remove unused imports"}
-test = {cmd = "pytest -v --cov=blueprint --cov-report=term", help = "Run unit tests with coverage"}
+bandit = {cmd = "bandit -c bandit.yaml -r src/ tests/", help = "Check for code security issues using bandit"}
+pylint = {cmd = "pylint src/ tests/", help = "Lint the code using pylint"}
+flake8 = {cmd = "flake8 --append-config .flake8 src/* tests/*", help = "Lint the code using flake8"}
+autoflake = {cmd = "autoflake --in-place --recursive --remove-all-unused-imports --expand-star-imports --ignore-init-module-imports src/* tests/*", help = "Remove unused imports"}
+test = {cmd = "pytest -v --cov=src --cov-report=term", help = "Run unit tests with coverage"}
 pre-commit = {cmd = "pre-commit run --files */* *", help = "Run pre-commit hooks before staging"}
 all = { sequence = ["format", "bandit", "pylint", "flake8", "autoflake", "test", "pre-commit"], ignore_fail = true, help = "Run all checks"}
 
