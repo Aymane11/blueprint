@@ -36,7 +36,10 @@ poe -h
 | autoflake  | Remove unused imports using [autoflake](https://github.com/PyCQA/autoflake)                                                                |
 | all        | Run all tasks                                                                                                                              |
 
-
+For example to run all the poe tasks, run:
+```
+poe all
+```
 
 #### Production
 - Run the following command to install dependencies (except for dev dependencies):
@@ -44,42 +47,45 @@ poe -h
 poetry install --no-dev
 ```
 
+## Project structure
+```bash
+.
+├── data
+│   ├── final                    # data after training the model
+│   ├── processed                # data after processing
+│   └── raw                      # raw data
+├── docs                         # documentation for your project
+├── .flake8                      # configuration for flake8 - a Python linting tool
+├── .gitignore                   # ignore files that cannot be commited to Git
+├── Makefile                     # store useful commands to set up the environment
+├── models                       # store models
+├── notebooks                    # store notebooks
+├── .pre-commit-config.yaml      # configurations for pre-commit
+├── pyproject.toml               # dependencies for poetry
+├── README.md                    # describe your project
+├── src                          # main code base module
+│   ├── __init__.py
+│   └── main.py                  # main script
+└── tests                        # test module
+    ├── __init__.py
+    └── test_blueprint.py
+```
+
+## TO DO
+- [ ] DVC
+- [ ] Hydra
+- [ ] Docker
+
 ## Contributing
 
 1. Fork it :fork_and_knife:
 2. Change it :wrench:
 4. Create a Pull Request :arrows_clockwise:
 
+## Contributors
 
-## Project structure
-```bash
-.
-├── data
-│   ├── final                       # data after training the model
-│   ├── processed                   # data after processing
-│   ├── raw                         # raw data
-├── docs                            # documentation for your project
-├── .flake8                         # configuration for flake8 - a Python formatter tool
-├── .gitignore                      # ignore files that cannot commit to Git
-├── Makefile                        # store useful commands to set up the environment
-├── models                          # store models
-├── notebooks                       # store notebooks
-├── .pre-commit-config.yaml         # configurations for pre-commit
-├── pyproject.toml                  # dependencies for poetry
-├── README.md                       # describe your project
-├── src                             # store source code
-│   ├── __init__.py                 # make src a Python module
-│   ├── blueprint.py
-└── tests                           # store tests
-    ├── __init__.py                 # make tests a Python module
-    ├── test_blueprint.py
-```
-
-## TO DO
-DVC
-Hydra
-Docker
-
-## License
-
-Distributed under the **MIT license**. See [`LICENSE.md`](https://github.com/Aymane11/blueprint/blob/main/LICENSE.md) file for more information.
+<div align="center">
+	<a href="https://github.com/Aymane11/blueprint/graphs/contributors">
+  	<img src="https://contrib.rocks/image?repo=Aymane11/blueprint" />
+	</a>
+</div>
