@@ -1,7 +1,17 @@
+import hydra
+from omegaconf import DictConfig
+from hydra.utils import to_absolute_path as abspath
+
+@hydra.main(version_base=None, config_path="../config", config_name='main')
+
+def test_hydra(cfg: DictConfig) -> None:
+    print(f"the repo's name is : {cfg.main.repo_name}")
+
+
 def say_hello():
     return "Hello World!"
-def very_long_function(long_variable_name,long_variable_name2,long_variable_name3,long_variable_name4,long_variable_name5,):
-    pass
+
 
 if __name__ == "__main__":
+    test_hydra()
     print(say_hello())

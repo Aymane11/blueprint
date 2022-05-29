@@ -1,0 +1,17 @@
+main:
+  repo_name: "blueprint"
+
+raw:
+  dir: data/raw
+  name: raw.csv   # name of the raw data file
+  path: ${raw.dir}/${raw.name}
+
+processed:
+  dir: data/processed
+  name: processed.csv
+  path: ${processed.dir}/${processed.name}
+
+final:
+  dir: data/final
+  name: final.csv
+  path: ${final.dir}/${final.name}
